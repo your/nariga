@@ -1,0 +1,32 @@
+<html ng-app>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dartsharp</title>
+
+<script async type="application/dart" src="nariga.dart"></script>
+<script async src="packages/browser/dart.js"></script>
+
+<link rel="stylesheet" href="nariga.css">
+</head>
+<body nariga>
+  <!--<header style="position: fixed; background: #eee; top: 0; left: 0; right: 0; padding: 10px; border-bottom: 1px solid #ccc;">
+    Scroll this page to test that infinite scrolling works.
+    <label style="float: right"><input type="checkbox" ng-model="ctrl.disabled"> Disable scrolling</label>
+</header>-->
+
+  <!--<ul>
+    <li ng-repeat="row in ctrl.rows" >{{row}}</li>
+</ul>-->
+  <h1>Upcoming Deadlines:</h1>
+  <div id="deadlist"></div>
+
+  <div infinite-scroll="ctrl.loadMore()"
+    infinite-scroll-disabled="ctrl.disabled"
+    infinite-scroll-distance="2" style="margin-top: 50px"></div>
+
+    <!--<div id="sample_container_id">
+    <p id="sample_text_id">Click me!</p>
+  </div>-->
+</body>
+</html>

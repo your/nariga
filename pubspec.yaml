@@ -1,0 +1,9 @@
+name: nariga
+description: A sample web application
+dependencies:
+  angular: any
+  avl_tree: any
+  browser: any
+  ng_infinite_scroll: any
+transformers:
+- angular
