@@ -50,6 +50,47 @@ File.open(calendar, "wb") do |saved_file|
   end
 end
 
+## BUG FIX: need to sanitize X-WR-CALNAME field:
+## if contains a non-escaped ',' it will give troubles
+## (can't understand why I found this field with ',' unescaped,
+## other fields have all ',' escaped - coursera their bad?)
+##
+
+bugline = 0
+calname = nil
+fixme = false
+
+calarray = []
+
+cal_file = File.open(calendar, 'r') do |f|
+	f.each_line.with_index do |line, i|
+		# puts "salvo linea: #{line}"
+		calarray << line
+		if (line.index('X-WR-CALNAME') != nil)
+			puts "!!!!! trovato bug: #{line}"
+			bugline = i
+			foundcomma = line.index(',')
+			escapedyet = line.index('\,')
+			foundcomma != nil ? (escapedyet != nil ? (break) : (fixme = true)) : nil
+		end
+	end
+end
+
+## FIX LATER TO FIX MORE THAN ONE UNESCAPED COMMA!! ##
+if fixme
+
+	calname = calarray[bugline].split(',')
+	newname = calname[0] + '\,' + calname [1] # adding escape \
+	
+	calarray[bugline] = newname
+
+	new_file = File.open(calendar, 'w') do |f|
+  		f.puts(calarray)
+	end
+		
+end
+		
+
 # Open a file or pass a string to the parser
 cal_file = File.open(calendar)
 
