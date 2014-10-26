@@ -9,11 +9,12 @@
 import 'dart:html';
 import 'dart:convert';
 import 'dart:async';
-import 'dart:core';
+import 'dart:convert';
 import 'package:avl_tree/avl_tree.dart';
 import 'package:angular/angular.dart';
 import 'package:ng_infinite_scroll/ng_infinite_scroll.dart';
 import 'package:angular/application_factory.dart';
+import 'package:crypto/crypto.dart';
 
 class NarigaModule extends Module {
   NarigaModule() {
@@ -22,34 +23,79 @@ class NarigaModule extends Module {
 }
 
 // how often update countdowns? (no json requests)
-const int UPDATE_DELAY = 5000; // 5secs
+const int UPDATE_DELAY = 5000; // 30secs
 
 DivElement deadList;
+Map courseMap;
 Map narigaMap;
+List narigaList;
+
 
 @Controller(selector: "[nariga]", publishAs: "ctrl")
 class TestController {
   var disabled = false;
   void loadMore() {
-    loadData();
+    //loadData();
   }
 }
 
+class Nariga {
+
+  String name;
+  String assign;
+  int deadline;
+  String link;
+  int id;
+
+  Nariga(this.name, this.assign, this.deadline, this.link, this.id);
+
+}
+
+bool loadingData;
+int loadedCourses;
+
 void main() {
-  
+
+  loadingData = true;
+  loadedCourses = 0;
+  courseMap = new Map<String, bool>();
+  narigaList = new List<Nariga>();
   narigaMap = new Map<int, int>();
 
-  // init Angular module
+  // init angular module
   var module = new Module();
   module.bind(TestController);
   module.install(new InfiniteScrollModule());
 
-  // ready to go
+  // ready to go with angular module
   applicationFactory().addModule(module).run();
+
+  // load available courses
+  loadCourses();
+
+  // stream a periodic task to update timers
+  var stream = new Stream.periodic(const Duration(milliseconds: UPDATE_DELAY), (count) {
+    // do something every tot
+    // return the result of that something
+    adjustTimers();
+    //print(count);
+  });
   
-  // first load
-  loadData();
+  var load = new Stream.periodic(const Duration(milliseconds: 100), (count) {
+    if (loadingData == false) {
+      // it means all courses data have been loaded, hence we can
+      // work on narigas (sort, etc) and draw them
+      workNarigas();
+    }
+  });
   
+  load.listen((result){});
+
+  stream.listen((result) {
+    //print('lol');
+    // listen for the result of the task
+  });
+
   // key: id nariga
   // valore: secs rimasti
 //  neightboursMap = new Map<int, int>();
@@ -68,55 +114,112 @@ void main() {
   scores['Bob'];      // 36
   scores['Rohan'];    //  5
   scores['Sophena'];  //  7*/
-  
+
 }
 
-// call the web server asynchronously
-void loadData() {
-  var url = "/data.json";
-  var request = HttpRequest.request(url).then(onDataLoaded);
+
+var jsonsPath = "/jsons";
+var coursesPath = "/courses";
+void loadCourses() {
+  var url = jsonsPath + coursesPath + "/courses.json";
+  var request = HttpRequest.request(url).then(onCoursesLoaded);
 }
 
-// parse json
+// parse courses
+void onCoursesLoaded(HttpRequest req) {
+  print('ho ricevuto corsi');
+  List courses = JSON.decode(req.responseText);
+  for (var course in courses) {
+    Map courseattr = course;
+    courseMap.putIfAbsent(courseattr["course"], () => true); // default value 1 = enabled
+  }
+  // got courses, get related deadlines (all enabled by default)
+  courseMap.forEach((String hash, bool enabled) => loadData(hash, enabled));
+}
+
+//
+// Base64 decoder made by myself.
+//
+String base64Decode(String hash) {
+  // thank you dart developers
+  var bytes = CryptoUtils.base64StringToBytes(hash);
+  var ud = new Utf8Decoder();
+  String decoded = ud.convert(bytes);
+  print(decoded);
+  return decoded;
+}
+
+void loadData(String hash, bool enabled) {
+  if (enabled) {
+    var coursename = base64Decode(hash);
+    var url = jsonsPath + coursesPath + "/" + hash + ".json";
+    var request = HttpRequest.request(url).then(onDataLoaded);
+  }
+
+}
+
+//
+// Callback from loadData()
+//
 void onDataLoaded(HttpRequest req) {
+  print('ho ricevuto json');
   List deadlines = JSON.decode(req.responseText);
   for (var soontodie in deadlines) {
     Map deaddata = soontodie;
-    var course = deaddata["course"];
-    var assign = deaddata["assign"];
-    var deadline = deaddata["deadline"];
-    var id = deaddata["id"];
-    checkDead(course, assign, deadline, id);
-    //addDeadList(course, assign, deadline, id);
+    String course = deaddata["course"];
+    String assign = deaddata["assign"];
+    int deadline = deaddata["deadline"];
+    String url = deaddata["url"];
+    int id = deaddata["id"];
+
+    // Add nariga object to exst list
+    var newNariga = new Nariga(course, assign, deadline, url, id);
+    narigaList.add(newNariga);
+    
+    // lol
+    loadedCourses +=1;
+    if (loadedCourses == courseMap.length) {
+      loadingData = false;
+    }
+    
+    // workNarigas() call was here, before I added the right above block
   }
-  scheduleAdjust();
 }
 
-void checkDead(course, assign, deadline, id) {
+//
+// Got all the deadlines, sort those and work to draw them!
+//
+void workNarigas() {
+  // functional style rocks
+  narigaList.sort((x, y) => x.deadline.compareTo(y.deadline));
+  for (var nariga in narigaList) {
+    checkDead(nariga.name, nariga.assign, nariga.deadline, nariga.id);
+  }
+}
 
+//
+// Check if nariga in in map (is this still useful?)
+//
+void checkDead(String course, String assign, int deadline, int id) {
+
+  // add a new deadline only if not present in the map
   if (!alreadyPresent(id)) {
     addDeadList(course, assign, deadline, id);
   } else {
     //print('trovata copia');
   }
-  /*var lefts = computeRemaining(deadline); // remaining ones
-
+  //var lefts = computeRemaining(deadline); // remaining ones
   // functional style ftw:
   // if absent key with id, add it and set value to the one returned by computeRemaining()
-  //neightboursMap.putIfAbsent(id, () => lefts);
-
-  // time to setPlace to it
-  // find the dead with a deadline value smaller then this
-  for (var dead in deadList) {
-    // dead.id
-  }*/
-
-  //var narigas = document.querySelectorAll('.nariga');
+  // NOT NEEDED ANYMORE:
+  // neightboursMap.putIfAbsent(id, () => lefts);
 }
 
-void sortMapByValue(map, val) {
 
-}
+//
+// Building a new nariga div
+//
+
 /* Skeleton of narigassss....
  *  <div class="nariga">
       <div class="lefts left1w">1w</div>
@@ -127,7 +230,6 @@ void sortMapByValue(map, val) {
     </div>
  */
 
-// building a new nariga!
 void addDeadList(String course, String assign, int deadline, int id) {
 
   // find the dead anchor
@@ -162,54 +264,37 @@ void addDeadList(String course, String assign, int deadline, int id) {
   deadList.children.add(newDivNariga);
 
   // fit it
-  setPlace(newDivLefts, deadline, int.parse(newDivNariga.id));
+  setPlace(newDivLefts, deadline, id);
 
 }
 
-void scheduleAdjust() {
-  var future = new Future.delayed(const Duration(milliseconds: UPDATE_DELAY), adjustTimers);
-}
-
-void adjustNariga(id, deadline) {
-  print(deadline.toString());
-  var narigaList = document.querySelectorAll('.nariga');
-  for (var nariga in narigaList) {
+//
+// Look for nariga and adjust it!
+//
+void adjustNariga(int id, int deadline) {
+  var narigas = document.querySelectorAll('.nariga');
+  for (var nariga in narigas) {
     if (int.parse(nariga.id) == id) {
       var n = nariga.querySelector('.lefts');
       setPlace(n, deadline, id);
-      break; // che cosa rozza lo so
+      break;
     }
   }
 }
+
+//
+// Updater
+//
 void adjustTimers() {
-  // print('aggiorno'); LOOP MORTALE AGGIISTA
+  // update timers only if newest data has been loaded or there are no pending adjust
+  print('aggiorno');
   narigaMap.forEach((id, deadline) => adjustNariga(id, deadline));
-  scheduleAdjust();
 }
 
-int cal(ranks) {
-  double multiplier = .5;
-  return (multiplier * ranks).toInt();
-}
-
-/*
- * <1h : 1px = 1min
- * <6h : 1px = 5min
- * <1d : 1px = 15min
- * <3d : 1px = 30min
- * <1w : 1px = 60min
- * >1w : 1px = 120min
- */
-
-// how many secs in one pixel
-const RAPPR_STEP_1H = 60;
-const RAPPR_STEP_6H = 300;
-const RAPPR_STEP_1D = 900;
-const RAPPR_STEP_3D = 1800;
-const RAPPR_STEP_1W = 3600;
-const RAPPR_STEP_XN = 7200;
-
-// lol
+//
+// Find a representation like: 1w 2d 14h 5m
+// (no intln for now)
+//
 const SECS_1M = 60;
 const SECS_1H = 3600;
 const SECS_6H = SECS_1H * 6;
@@ -217,10 +302,10 @@ const SECS_1D = SECS_1H * 24;
 const SECS_3D = SECS_1D * 3;
 const SECS_1W = SECS_1D * 7;
 
-
-String computeString(leftsecs) {
-  var sb = new StringBuffer(); // no intln for now
-
+String computeString(int leftsecs) {
+  
+  var sb = new StringBuffer();
+  
   if (leftsecs > 0) {
 
     int weeks = leftsecs ~/ SECS_1W;
@@ -234,58 +319,92 @@ String computeString(leftsecs) {
     (mins > 0) ? sb.write(mins.toString() + "m") : null;
 
   } else {
-    sb.write("EXPIRED");
+    sb.write("EXP"); // what to do then?
   }
-  print(sb.toString());
+  
   return sb.toString();
-}
-void updateDead(dead, leftsecs, id) {
-
-  dead.text = computeString(leftsecs);
-  dead.style..width = '${computeWidth(leftsecs).toString()}px'; // default for now
   
 }
 
-bool alreadyPresent(id) {
+// Update css style to narigas
+void updateDead(dead, int leftsecs, int id) {
+
+  dead.text = computeString(leftsecs);
+  dead.style
+      ..width = '${computeWidth(leftsecs).toString()}%'
+      ..background = '#${computeBackground(leftsecs)}';
+
+}
+
+bool alreadyPresent(int id) {
   return narigaMap.containsKey(id);
 }
 
-void setPlace(dead, deadsecs, id) {
-  print(dead);
-  print(deadsecs);
-  print(id);
+// IS this still useful?
+void setPlace(dead, int deadsecs, int id) {
   // hey, we have a new nariga, add to map:
-  narigaMap.addAll({id : deadsecs});
-  print(narigaMap.length);
+  narigaMap.addAll({
+    id: deadsecs
+  }); // is this useful?
   updateDead(dead, computeRemaining(deadsecs), id);
 }
 
-int computeRemaining(deadsecs) {
+//
+// Find remaining time starting given deadline secs frome epoch
+//
+int computeRemaining(int deadsecs) {
   DateTime now = new DateTime.now();
   DateTime then = new DateTime.fromMillisecondsSinceEpoch(deadsecs * 1000, isUtc: true);
   Duration diff = then.difference(now);
   var leftsecs = diff.inSeconds;
 //  print(now.toLocal());
 //  print(then.toLocal()); // TO LOCAL!
-  print('left:'+ leftsecs.toString());
+  (leftsecs > 0) ? print('left:' + leftsecs.toString()) : null;
   return leftsecs;
 }
-/* NOT NEEDED ANYMORE
-DateTime convertDeadline(int deadline) {
-  //IN: (int) seconds since epoch
-  //OUT: (DatTime) 2012-02-27 13:27:00 (local time) NO UTC PLS!!!!!!:@@@@
-  DateTime deadlineUTC =
-      new DateTime.fromMillisecondsSinceEpoch(deadline*1000, isUtc:true);
-  var deadlineLocal = deadlineUTC.toLocal();
-  return deadlineLocal; // LOCAL TIME (browser)
-}*/
+
+
+//
+// Choose background according to left time
+// Current: http://www.colourlovers.com/palette/138026/a_beautiful_day
+//
+const BG_1H = '000';
+const BG_6H = 'FF003D';
+const BG_1D = 'FC930A';
+const BG_3D = 'F7C41F';
+const BG_1W = 'E0E05A';
+const BG_XN = 'CCF390';
+
+String computeBackground(int leftsecs) {
+
+  var bg = "FFF"; // default
+
+  if (leftsecs > 0) {
+    (leftsecs <= SECS_1H) ? bg = BG_1H : null;
+    (leftsecs > SECS_1H && leftsecs <= SECS_6H) ? bg = BG_6H : null;
+    (leftsecs > SECS_6H && leftsecs <= SECS_1D) ? bg = BG_1D : null;
+    (leftsecs > SECS_1D && leftsecs <= SECS_3D) ? bg = BG_3D : null;
+    (leftsecs > SECS_3D && leftsecs <= SECS_1W) ? bg = BG_1W : null;
+    (leftsecs > SECS_1W) ? bg = BG_XN : null;
+  }
+
+  return bg;
+}
+
+//
+// How many secs represent in one pixel?
+// (anyway I switch to percentages then)
+//
+const RAPPR_STEP_1H = 60; // <1h : 1px = 1min
+const RAPPR_STEP_6H = 300; // <6h : 1px = 5min
+const RAPPR_STEP_1D = 900; // <1d : 1px = 15min
+const RAPPR_STEP_3D = 1200; // <3d : 1px = 20min
+const RAPPR_STEP_1W = 1500; // <1w : 1px = 25min
+const RAPPR_STEP_XN = 1800; // >1w : 1px = 30min
+
 int computeWidth(int leftsecs) {
 
-  //var deadtimes = document.querySelectorAll('.nariga .lefts');
-  //for (var dead in deadtimes) {
-  // int leftsecs = double.parse(dead.text).toInt(); // there should be no loss, json already has rounded values
-
-  var newwidth = 30;
+  var newwidth = 30; // default
 
   if (leftsecs > 0) {
     (leftsecs <= SECS_1H) ? newwidth = leftsecs ~/ RAPPR_STEP_1H : null;
@@ -296,24 +415,26 @@ int computeWidth(int leftsecs) {
     (leftsecs > SECS_1W) ? newwidth = leftsecs ~/ RAPPR_STEP_XN : null;
   }
 
-  print(newwidth);
+  newwidth = newwidth * 100 ~/ 800; // adapt to my choosen proportions
 
-  return 10+newwidth;
+  return newwidth;
 }
 
-/*
-.left1m
-.left5m
-.left1h
-.left6h
-.left1d
-.left3d
-.left5d
-.left1w 
-.left3w
- */
 
-//
+/////////////////////////////////////////////////////////////////////////////////////////////
+/* NOT NEEDED ANYMORE
+DateTime convertDeadline(int deadline) {
+  //IN: (int) seconds since epoch
+  //OUT: (DatTime) 2012-02-27 13:27:00 (local time) NO UTC PLS!!!!!!:@@@@
+  DateTime deadlineUTC =
+      new DateTime.fromMillisecondsSinceEpoch(deadline*1000, isUtc:true);
+  var deadlineLocal = deadlineUTC.toLocal();
+  return deadlineLocal; // LOCAL TIME (browser)
+}*/
+
+//void lunchFutureTimer() {
+//    var future = new Future.delayed(const Duration(milliseconds: UPDATE_DELAY), adjustTimers);
+//}
 
 /*void main() {
   querySelector("#sample_text_id")

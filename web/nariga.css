@@ -45,7 +45,7 @@ h1 {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   display: inline-block;
-  width: 311px;
+  /*width: 311px;*/
   padding: 3px 20px 1px 15px;
   border: none;
   margin: 1px;
@@ -66,7 +66,7 @@ h1 {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-display:inline-block;
+  display:inline-block;
   width: 20px;
   padding: 7px 20px 5px 10px;
   overflow: hidden;

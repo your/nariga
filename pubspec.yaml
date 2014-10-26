@@ -4,6 +4,7 @@ dependencies:
   angular: any
   avl_tree: any
   browser: any
+  crypto: any
   ng_infinite_scroll: any
 transformers:
 - angular

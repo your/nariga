@@ -1,0 +1,49 @@
+[{
+  "course": "The Data Scientist’s Toolbox",
+  "assign": "Week 1 Quiz (Hard Deadline)",
+  "deadline": 1413761400,
+  "link": "https://class.coursera.org/datascitoolbox-008/quiz/start?quiz_id=23",
+  "id": 1
+},{
+  "course": "The Data Scientist’s Toolbox",
+  "assign": "Week 1 Quiz (Due Date)",
+  "deadline": 1413329400,
+  "link": "https://class.coursera.org/datascitoolbox-008/quiz/start?quiz_id=23",
+  "id": 2
+},{
+  "course": "The Data Scientist’s Toolbox",
+  "assign": "Week 2 Quiz (Hard Deadline)",
+  "deadline": 1414193400,
+  "link": "https://class.coursera.org/datascitoolbox-008/quiz/start?quiz_id=25",
+  "id": 3
+},{
+  "course": "The Data Scientist’s Toolbox",
+  "assign": "Week 2 Quiz (Due Date)",
+  "deadline": 1413761400,
+  "link": "https://class.coursera.org/datascitoolbox-008/quiz/start?quiz_id=25",
+  "id": 4
+},{
+  "course": "The Data Scientist’s Toolbox",
+  "assign": "Week 3 Quiz (Hard Deadline)",
+  "deadline": 1414798200,
+  "link": "https://class.coursera.org/datascitoolbox-008/quiz/start?quiz_id=35",
+  "id": 5
+},{
+  "course": "The Data Scientist’s Toolbox",
+  "assign": "Week 3 Quiz (Due Date)",
+  "deadline": 1414366200,
+  "link": "https://class.coursera.org/datascitoolbox-008/quiz/start?quiz_id=35",
+  "id": 6
+},{
+  "course": "The Data Scientist’s Toolbox",
+  "assign": "Course Project: Setting up accounts (Submission Deadline)",
+  "deadline": 1414366200,
+  "link": "https://class.coursera.org/datascitoolbox-008/human_grading/view?assessment_id=3",
+  "id": 7
+},{
+  "course": "The Data Scientist’s Toolbox",
+  "assign": "Course Project: Setting up accounts (Evaluation Deadline)",
+  "deadline": 1414974600,
+  "link": "https://class.coursera.org/datascitoolbox-008/human_grading/view?assessment_id=3",
+  "id": 8
+}]
