@@ -80,7 +80,7 @@ void main() {
     adjustTimers();
     //print(count);
   });
-  
+
   var load = new Stream.periodic(const Duration(milliseconds: 100), (count) {
     if (loadingData == false) {
       // it means all courses data have been loaded, hence we can
@@ -88,8 +88,8 @@ void main() {
       workNarigas();
     }
   });
-  
-  load.listen((result){});
+
+  load.listen((result) {});
 
   stream.listen((result) {
     //print('lol');
@@ -175,13 +175,13 @@ void onDataLoaded(HttpRequest req) {
     // Add nariga object to exst list
     var newNariga = new Nariga(course, assign, deadline, url, id);
     narigaList.add(newNariga);
-    
+
     // lol
-    loadedCourses +=1;
+    loadedCourses += 1;
     if (loadedCourses == courseMap.length) {
       loadingData = false;
     }
-    
+
     // workNarigas() call was here, before I added the right above block
   }
 }
@@ -301,11 +301,12 @@ const SECS_6H = SECS_1H * 6;
 const SECS_1D = SECS_1H * 24;
 const SECS_3D = SECS_1D * 3;
 const SECS_1W = SECS_1D * 7;
+const SECS_2W = SECS_1W * 2;
 
 String computeString(int leftsecs) {
-  
+
   var sb = new StringBuffer();
-  
+
   if (leftsecs > 0) {
 
     int weeks = leftsecs ~/ SECS_1W;
@@ -321,9 +322,9 @@ String computeString(int leftsecs) {
   } else {
     sb.write("EXP"); // what to do then?
   }
-  
+
   return sb.toString();
-  
+
 }
 
 // Update css style to narigas
@@ -392,28 +393,118 @@ String computeBackground(int leftsecs) {
 }
 
 //
-// How many secs represent in one pixel?
+// How many secs to represent in one pixel?
 // (anyway I switch to percentages then)
 //
 const RAPPR_STEP_1H = 60; // <1h : 1px = 1min
 const RAPPR_STEP_6H = 300; // <6h : 1px = 5min
 const RAPPR_STEP_1D = 900; // <1d : 1px = 15min
 const RAPPR_STEP_3D = 1200; // <3d : 1px = 20min
-const RAPPR_STEP_1W = 1500; // <1w : 1px = 25min
-const RAPPR_STEP_XN = 1800; // >1w : 1px = 30min
+const RAPPR_STEP_1W = 3600; // <1w : 1px = 25min
+const RAPPR_STEP_2W = 7200; // <1w : 1px = 25min
+const RAPPR_STEP_XN = 14400; // >1w : 1px = 30min
+
+const PIX_1H = SECS_1H ~/ RAPPR_STEP_1H; // 60
+const PIX_6H = SECS_6H ~/ RAPPR_STEP_6H; // 72
+const PIX_1D = SECS_1D ~/ RAPPR_STEP_1D; // 96
+const PIX_3D = SECS_3D ~/ RAPPR_STEP_3D; // 403
+const PIX_1W = SECS_1W ~/ RAPPR_STEP_1W; // 465
+const PIX_2W = SECS_2W ~/ RAPPR_STEP_2W; // 465
+
 
 int computeWidth(int leftsecs) {
 
   var newwidth = 30; // default
 
+  // ok, I got crazy doing these calculations but it was fun.
+  // guessing what I am doing here?
   if (leftsecs > 0) {
-    (leftsecs <= SECS_1H) ? newwidth = leftsecs ~/ RAPPR_STEP_1H : null;
-    (leftsecs > SECS_1H && leftsecs <= SECS_6H) ? newwidth = leftsecs ~/ RAPPR_STEP_6H : null;
-    (leftsecs > SECS_6H && leftsecs <= SECS_1D) ? newwidth = leftsecs ~/ RAPPR_STEP_1D : null;
-    (leftsecs > SECS_1D && leftsecs <= SECS_3D) ? newwidth = leftsecs ~/ RAPPR_STEP_3D : null;
-    (leftsecs > SECS_3D && leftsecs <= SECS_1W) ? newwidth = leftsecs ~/ RAPPR_STEP_1W : null;
-    (leftsecs > SECS_1W) ? newwidth = leftsecs ~/ RAPPR_STEP_XN : null;
+    
+    if (leftsecs <= SECS_1H) {
+      int range = leftsecs;
+      newwidth = range ~/ RAPPR_STEP_1H;
+    }
+
+    if (leftsecs > SECS_1H && leftsecs <= SECS_6H) {
+      int range1 = leftsecs - SECS_1H;
+      int width1 = range1 ~/ RAPPR_STEP_6H;
+      int range0 = SECS_1H;
+      int width0 = SECS_1H ~/ RAPPR_STEP_1H;
+      newwidth = width0 + width1;
+    }
+    
+    if (leftsecs > SECS_6H && leftsecs <= SECS_1D) {
+      int range2 = leftsecs - SECS_6H;
+      int width2 = range2 ~/ RAPPR_STEP_1D;
+      int range1 = SECS_6H - SECS_1H;
+      int width1 = range1 ~/ RAPPR_STEP_6H;
+      int range0 = SECS_1H;
+      int width0 = range0 ~/ RAPPR_STEP_1H;
+      newwidth = width0 + width1 + width2;
+    }
+
+    if (leftsecs > SECS_1D && leftsecs <= SECS_3D) {
+      int range3 = leftsecs - SECS_1D;
+      int width3 = range3 ~/ RAPPR_STEP_3D;
+      int range2 = SECS_1D - SECS_6H;
+      int width2 = range2 ~/ RAPPR_STEP_1D;
+      int range1 = SECS_6H - SECS_1H;
+      int width1 = range1 ~/ RAPPR_STEP_6H;
+      int range0 = SECS_1H;
+      int width0 = range0 ~/ RAPPR_STEP_1H;
+      newwidth = width0 + width1 + width2 + width3;
+    }
+
+    if (leftsecs > SECS_3D && leftsecs <= SECS_1W) {
+      int range4 = leftsecs - SECS_3D;
+      int width4 = range4 ~/ RAPPR_STEP_1W;
+      int range3 = SECS_3D - SECS_1D;
+      int width3 = range3 ~/ RAPPR_STEP_3D;
+      int range2 = SECS_1D - SECS_6H;
+      int width2 = range2 ~/ RAPPR_STEP_1D;
+      int range1 = SECS_6H - SECS_1H;
+      int width1 = range1 ~/ RAPPR_STEP_6H;
+      int range0 = SECS_1H;
+      int width0 = range0 ~/ RAPPR_STEP_1H;
+      newwidth = width0 + width1 + width2 + width3 + width4;
+    }
+ 
+    if (leftsecs > SECS_1W && leftsecs <= SECS_2W) {
+      int range5 = leftsecs - SECS_1W;
+      int width5 = range5 ~/ RAPPR_STEP_2W;
+      int range4 = SECS_1W - SECS_3D;
+      int width4 = range4 ~/ RAPPR_STEP_1W;
+      int range3 = SECS_3D - SECS_1D;
+      int width3 = range3 ~/ RAPPR_STEP_3D;
+      int range2 = SECS_1D - SECS_6H;
+      int width2 = range2 ~/ RAPPR_STEP_1D;
+      int range1 = SECS_6H - SECS_1H;
+      int width1 = range1 ~/ RAPPR_STEP_6H;
+      int range0 = SECS_1H;
+      int width0 = range0 ~/ RAPPR_STEP_1H;
+      newwidth = width0 + width1 + width2 + width3 + width4 + width5;
+    }
+    
+    if (leftsecs > SECS_2W) {
+      int range6 = leftsecs - SECS_2W;
+      int width6 = range6 ~/ RAPPR_STEP_XN;
+      int range5 = SECS_2W - SECS_1W;
+      int width5 = range5 ~/ RAPPR_STEP_2W;
+      int range4 = SECS_1W - SECS_3D;
+      int width4 = range4 ~/ RAPPR_STEP_1W;
+      int range3 = SECS_3D - SECS_1D;
+      int width3 = range3 ~/ RAPPR_STEP_3D;
+      int range2 = SECS_1D - SECS_6H;
+      int width2 = range2 ~/ RAPPR_STEP_1D;
+      int range1 = SECS_6H - SECS_1H;
+      int width1 = range1 ~/ RAPPR_STEP_6H;
+      int range0 = SECS_1H;
+      int width0 = range0 ~/ RAPPR_STEP_1H;
+      newwidth = width0 + width1 + width2 + width3 + width4 + width5 + width6;
+    }
+
   }
+  //print((leftsecs - SECS_1H - SECS_6H - SECS_1D - SECS_3D - SECS_1W) ~/ RAPPR_STEP_XN);
 
   newwidth = newwidth * 100 ~/ 800; // adapt to my choosen proportions
 
