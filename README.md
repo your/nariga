@@ -20,6 +20,7 @@ If the idea is liked, TODOs are:
 
 * Design a database (relational?) to allow people to have a personal account with settings
 * Add support for deadlines from other MOOC services, such as edX
+* Add timed email alerts
 
 ## Languages Used
 
