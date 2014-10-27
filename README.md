@@ -1,6 +1,7 @@
 # Coursera's Deadlines Visualizer (codename: Nariga) #
 
 A *"at one glance"* solution for those who follow and are determined to succed in more than one course.
+
 More info here: [http://res.sharped.net/](http://res.sharped.net/)
 
 # What shall be done SOON
