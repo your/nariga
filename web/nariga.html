@@ -1,22 +1,130 @@
-<html ng-app>
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dartsharp</title>
+<title>MoocBoom</title>
 
 <script async type="application/dart" src="nariga.dart"></script>
 <script async src="packages/browser/dart.js"></script>
 
+
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="packages/bootjack/css/bootstrap.css">
 <link rel="stylesheet" href="nariga.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="search.css">
 </head>
-<body nariga>
+<body>
+
   <!--<header style="position: fixed; background: #eee; top: 0; left: 0; right: 0; padding: 10px; border-bottom: 1px solid #ccc;">
     Scroll this page to test that infinite scrolling works.
     <label style="float: right"><input type="checkbox" ng-model="ctrl.disabled"> Disable scrolling</label>
 </header>-->
+    <!--<h2>Upcoming Deadlines</h2>-->
+    <!--<div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+              <div class="nariga">
+                <div class="lefts left1w">1w</div>
+                <div class="titles">
+                  <div class="coursename">The Data Scientist’s Toolbox</div>
+                  <div class="coursetask">Week 1 Quiz (Hard Deadline)</div>
+                </div>
+              </div>
+            </a>
+          </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+          <div class="panel-body">
+          <span class="label label-danger">Danger</span>
+           </div>
+        </div>
+      </div>
 
-  <h1>Upcoming Deadlines:</h1>
-  <div id="deadlist"></div>
+    </div>-->
+    
+<!--      
+<div class="page-header">
+  <h1>Hello, Joe! <small>(:</small></h1>
+</div>
+<div class="alert alert-warning alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+</div>
+<div class="alert alert-danger alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  <strong>Warning!</strong> In 2 days you'll be facing 5 deadlines in a period of 2 hours.
+</div>
+<div class="alert alert-success alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  <strong>Success!</strong> You passed all the deadlines this week! Keep it up!
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">
+        <form class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search MOOC">
+  </div>
+  <button type="submit" class="btn btn-default">Add it!</button>
+</form>
+  </div>
+</div>
+-->
+  <!--<div class="page-header">
+  <h1>Upcoming Deadlines:</h1></div>-->
+  
+  <!--<div class="panel-group" id="accordion">-->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img alt="Brand" src="moocboom.svg"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Deadlines <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Courses</a></li>
+        <!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+        </li>-->
+      </ul>
+      <form class="navbar-form navbar-left" id="search-form" role="search">
+        <div class="form-group">
+          <input type="text" autocomplete="off" data-provide="typeahead" id="spotlight" class="form-control" placeholder="Add new MOOC">
+        </div>
+        <button type="submit" class="btn btn-default">Add it!</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">About</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Yourself <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+          <li><a href="#"></a></li>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  <div class="deadtitle"><h1>Your Upcoming Deadlines:</h1></div>
+  <div class="deadbody" id="deadlist"></div>
+  <!--</div>-->
 
   <!--temp disabled<div infinite-scroll="ctrl.loadMore()"
     infinite-scroll-disabled="ctrl.disabled"
@@ -25,5 +133,11 @@
     <!--<div id="sample_container_id">
     <p id="sample_text_id">Click me!</p>
   </div>-->
+
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="bootstrap3-typeahead.min.js"></script>
+<script src="bloodhound.js"></script>
+<!--<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>-->
+<script src="search.js"></script>
 </body>
 </html>
