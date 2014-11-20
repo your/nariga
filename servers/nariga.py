@@ -25,7 +25,7 @@ def login(form):
 
 	user_record = users.validate_login(nuser, npass)
 
-	session_id = "-1"
+	session_id = "0" # login failure
 
 	if user_record:
 		session_id = sessions.start_session(user_record['_id'])
@@ -38,7 +38,7 @@ def application(env, start_response):
 	form = formParser.FormParser(env, POST_METHOD)
 	what = form.getField('w')
 
-	resp = False
+	resp = "-1" # wrong query or else
 
 	if what == '1':
 		resp = login(form)

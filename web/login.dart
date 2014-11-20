@@ -20,8 +20,10 @@ void main() {
     HttpRequest.request('http://107.150.3.151:8070/?w=$what&u=$user&p=$pass').then((HttpRequest resp) {
       String session_id = resp.responseText.toString();
       print(resp.responseText.toString());
-      if (session_id == "-1") {
+      if (session_id == "0") {
         print("Username/password mismatch");
+      } else if (session_id == "-1") {
+        print("An error occured.");
       } else {
         createCookie('session', session_id, 1);
         print("Cookie set: " + readCookie('session'));
