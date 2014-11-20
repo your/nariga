@@ -1,91 +1,103 @@
 [{
   "course": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
+  "assign": "End-of-Course Survey, Learning How to Learn (Hard Deadline)",
+  "deadline": 1415685540,
+  "link": "https://class.coursera.org/learning-002/quiz/start?quiz_id=19",
+  "id": 323
+},{
+  "course": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
+  "assign": "End-of-Course Survey, Learning How to Learn (Due Date)",
+  "deadline": 1415681940,
+  "link": "https://class.coursera.org/learning-002/quiz/start?quiz_id=19",
+  "id": 324
+},{
+  "course": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
   "assign": "Welcome Survey (Hard Deadline)",
   "deadline": 1413435540,
   "link": "https://class.coursera.org/learning-002/quiz/start?quiz_id=21",
-  "id": 57
+  "id": 325
 },{
   "course": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
   "assign": "Welcome Survey (Due Date)",
   "deadline": 1413431940,
   "link": "https://class.coursera.org/learning-002/quiz/start?quiz_id=21",
-  "id": 58
+  "id": 326
 },{
   "course": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
   "assign": "Quiz: Week 1 (Hard Deadline)",
   "deadline": 1413521940,
   "link": "https://class.coursera.org/learning-002/quiz/start?quiz_id=43",
-  "id": 59
+  "id": 327
 },{
   "course": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
   "assign": "Quiz: Week 1 (Due Date)",
   "deadline": 1413518340,
   "link": "https://class.coursera.org/learning-002/quiz/start?quiz_id=43",
-  "id": 60
+  "id": 328
 },{
   "course": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
   "assign": "Final examination (Hard Deadline)",
   "deadline": 1415080740,
   "link": "https://class.coursera.org/learning-002/quiz/start?quiz_id=53",
-  "id": 61
+  "id": 329
 },{
   "course": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
   "assign": "Final examination (Due Date)",
   "deadline": 1415077140,
   "link": "https://class.coursera.org/learning-002/quiz/start?quiz_id=53",
-  "id": 62
+  "id": 330
 },{
   "course": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
   "assign": "Quiz: Week 2 (Hard Deadline)",
   "deadline": 1413867540,
   "link": "https://class.coursera.org/learning-002/quiz/start?quiz_id=61",
-  "id": 63
+  "id": 331
 },{
   "course": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
   "assign": "Quiz: Week 2 (Due Date)",
   "deadline": 1413863940,
   "link": "https://class.coursera.org/learning-002/quiz/start?quiz_id=61",
-  "id": 64
+  "id": 332
 },{
   "course": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
   "assign": "Quiz: Week 3 (Hard Deadline)",
   "deadline": 1414472340,
   "link": "https://class.coursera.org/learning-002/quiz/start?quiz_id=63",
-  "id": 65
+  "id": 333
 },{
   "course": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
   "assign": "Quiz: Week 3 (Due Date)",
   "deadline": 1414468740,
   "link": "https://class.coursera.org/learning-002/quiz/start?quiz_id=63",
-  "id": 66
+  "id": 334
 },{
   "course": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
   "assign": "Introductory quiz (Hard Deadline)",
   "deadline": 1415077140,
   "link": "https://class.coursera.org/learning-002/quiz/start?quiz_id=153",
-  "id": 67
+  "id": 335
 },{
   "course": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
   "assign": "Peer grading assignment #1 (Submission Deadline)",
   "deadline": 1413431940,
   "link": "https://class.coursera.org/learning-002/human_grading/view?assessment_id=2",
-  "id": 68
+  "id": 336
 },{
   "course": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
   "assign": "Peer grading assignment #1 (Evaluation Deadline)",
   "deadline": 1414036740,
   "link": "https://class.coursera.org/learning-002/human_grading/view?assessment_id=2",
-  "id": 69
+  "id": 337
 },{
   "course": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
   "assign": "Peer grading assignment #2 (Submission Deadline)",
   "deadline": 1414641540,
   "link": "https://class.coursera.org/learning-002/human_grading/view?assessment_id=3",
-  "id": 70
+  "id": 338
 },{
   "course": "Learning How to Learn: Powerful mental tools to help you master tough subjects",
   "assign": "Peer grading assignment #2 (Evaluation Deadline)",
   "deadline": 1415077140,
   "link": "https://class.coursera.org/learning-002/human_grading/view?assessment_id=3",
-  "id": 71
+  "id": 339
 }]

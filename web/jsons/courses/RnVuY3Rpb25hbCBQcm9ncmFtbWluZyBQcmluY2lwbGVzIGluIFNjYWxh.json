@@ -3,95 +3,95 @@
   "assign": "Example Assignment (Hard Deadline)",
   "deadline": 1415793600,
   "link": "https://class.coursera.org/progfun-005/assignment/view?assignment_id=2",
-  "id": 41
+  "id": 307
 },{
   "course": "Functional Programming Principles in Scala",
   "assign": "Example Assignment (Due Date)",
   "deadline": 1415448000,
   "link": "https://class.coursera.org/progfun-005/assignment/view?assignment_id=2",
-  "id": 42
+  "id": 308
 },{
   "course": "Functional Programming Principles in Scala",
   "assign": "Functional Sets (Hard Deadline)",
   "deadline": 1412888400,
   "link": "https://class.coursera.org/progfun-005/assignment/view?assignment_id=3",
-  "id": 43
+  "id": 309
 },{
   "course": "Functional Programming Principles in Scala",
   "assign": "Functional Sets (Due Date)",
   "deadline": 1412542800,
   "link": "https://class.coursera.org/progfun-005/assignment/view?assignment_id=3",
-  "id": 44
+  "id": 310
 },{
   "course": "Functional Programming Principles in Scala",
   "assign": "Recursion (Hard Deadline)",
   "deadline": 1412283600,
   "link": "https://class.coursera.org/progfun-005/assignment/view?assignment_id=4",
-  "id": 45
+  "id": 311
 },{
   "course": "Functional Programming Principles in Scala",
   "assign": "Recursion (Due Date)",
   "deadline": 1411938000,
   "link": "https://class.coursera.org/progfun-005/assignment/view?assignment_id=4",
-  "id": 46
+  "id": 312
 },{
   "course": "Functional Programming Principles in Scala",
   "assign": "Object-Oriented Sets (Hard Deadline)",
   "deadline": 1413493200,
   "link": "https://class.coursera.org/progfun-005/assignment/view?assignment_id=9",
-  "id": 47
+  "id": 313
 },{
   "course": "Functional Programming Principles in Scala",
   "assign": "Object-Oriented Sets (Due Date)",
   "deadline": 1413147600,
   "link": "https://class.coursera.org/progfun-005/assignment/view?assignment_id=9",
-  "id": 48
+  "id": 314
 },{
   "course": "Functional Programming Principles in Scala",
   "assign": "Huffman Coding (Hard Deadline)",
   "deadline": 1414620000,
   "link": "https://class.coursera.org/progfun-005/assignment/view?assignment_id=15",
-  "id": 49
+  "id": 315
 },{
   "course": "Functional Programming Principles in Scala",
   "assign": "Huffman Coding (Due Date)",
   "deadline": 1414270800,
   "link": "https://class.coursera.org/progfun-005/assignment/view?assignment_id=15",
-  "id": 50
+  "id": 316
 },{
   "course": "Functional Programming Principles in Scala",
   "assign": "Anagrams (Hard Deadline)",
   "deadline": 1415224800,
   "link": "https://class.coursera.org/progfun-005/assignment/view?assignment_id=17",
-  "id": 51
+  "id": 317
 },{
   "course": "Functional Programming Principles in Scala",
   "assign": "Anagrams (Due Date)",
   "deadline": 1414879200,
   "link": "https://class.coursera.org/progfun-005/assignment/view?assignment_id=17",
-  "id": 52
+  "id": 318
 },{
   "course": "Functional Programming Principles in Scala",
   "assign": "Bloxorz (Hard Deadline)",
   "deadline": 1416520800,
   "link": "https://class.coursera.org/progfun-005/assignment/view?assignment_id=19",
-  "id": 53
+  "id": 319
 },{
   "course": "Functional Programming Principles in Scala",
   "assign": "Bloxorz (Due Date)",
   "deadline": 1416088800,
   "link": "https://class.coursera.org/progfun-005/assignment/view?assignment_id=19",
-  "id": 54
+  "id": 320
 },{
   "course": "Functional Programming Principles in Scala",
   "assign": "[DEMO] Example Assessment (Submission Deadline)",
   "deadline": 1378421220,
   "link": "https://class.coursera.org/progfun-005/human_grading/view?assessment_id=2",
-  "id": 55
+  "id": 321
 },{
   "course": "Functional Programming Principles in Scala",
   "assign": "[DEMO] Example Assessment (Evaluation Deadline)",
   "deadline": 1379026020,
   "link": "https://class.coursera.org/progfun-005/human_grading/view?assessment_id=2",
-  "id": 56
+  "id": 322
 }]
