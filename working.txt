@@ -1,0 +1,216 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Coursera Calendars//NONSGML//EN
+X-WR-CALNAME:Learning How to Learn: Powerful mental tools to help you master tough subjects
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:973097|quiz|21|hard
+DTSTART:20141016T035900Z
+DTEND:20141016T045900Z
+DTSTAMP:20141016T035900Z
+CREATED:20141025T170446Z
+DESCRIPTION:If you submit any time after the hard deadline\, you will not receive credit. Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141016T035900Z
+LOCATION:https://class.coursera.org/learning-002/quiz/start?quiz_id=21
+SUMMARY:Welcome Survey (Hard Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973097|quiz|21|soft
+DTSTART:20141016T025900Z
+DTEND:20141016T035900Z
+DTSTAMP:20141016T025900Z
+CREATED:20141025T170446Z
+DESCRIPTION:If you submit after the due date (but before the hard deadline)\, your submission score will be penalized 20%. Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141016T025900Z
+LOCATION:https://class.coursera.org/learning-002/quiz/start?quiz_id=21
+SUMMARY:Welcome Survey (Due Date)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973097|quiz|43|hard
+DTSTART:20141017T035900Z
+DTEND:20141017T045900Z
+DTSTAMP:20141017T035900Z
+CREATED:20141025T170446Z
+DESCRIPTION:If you submit any time after the hard deadline\, you will not receive credit. Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141017T035900Z
+LOCATION:https://class.coursera.org/learning-002/quiz/start?quiz_id=43
+SUMMARY:Quiz: Week 1 (Hard Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973097|quiz|43|soft
+DTSTART:20141017T025900Z
+DTEND:20141017T035900Z
+DTSTAMP:20141017T025900Z
+CREATED:20141025T170446Z
+DESCRIPTION:If you submit after the due date (but before the hard deadline)\, your submission score will be penalized 20%. Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141017T025900Z
+LOCATION:https://class.coursera.org/learning-002/quiz/start?quiz_id=43
+SUMMARY:Quiz: Week 1 (Due Date)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973097|quiz|53|hard
+DTSTART:20141104T045900Z
+DTEND:20141104T055900Z
+DTSTAMP:20141104T045900Z
+CREATED:20141025T170446Z
+DESCRIPTION:If you submit any time after the hard deadline\, you will not receive credit. Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141104T045900Z
+LOCATION:https://class.coursera.org/learning-002/quiz/start?quiz_id=53
+SUMMARY:Final examination (Hard Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973097|quiz|53|soft
+DTSTART:20141104T035900Z
+DTEND:20141104T045900Z
+DTSTAMP:20141104T035900Z
+CREATED:20141025T170446Z
+DESCRIPTION:If you submit after the due date (but before the hard deadline)\, your submission score will be penalized 20%. Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141104T035900Z
+LOCATION:https://class.coursera.org/learning-002/quiz/start?quiz_id=53
+SUMMARY:Final examination (Due Date)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973097|quiz|61|hard
+DTSTART:20141021T035900Z
+DTEND:20141021T045900Z
+DTSTAMP:20141021T035900Z
+CREATED:20141025T170446Z
+DESCRIPTION:If you submit any time after the hard deadline\, you will not receive credit. Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141021T035900Z
+LOCATION:https://class.coursera.org/learning-002/quiz/start?quiz_id=61
+SUMMARY:Quiz: Week 2 (Hard Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973097|quiz|61|soft
+DTSTART:20141021T025900Z
+DTEND:20141021T035900Z
+DTSTAMP:20141021T025900Z
+CREATED:20141025T170446Z
+DESCRIPTION:If you submit after the due date (but before the hard deadline)\, your submission score will be penalized 20%. Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141021T025900Z
+LOCATION:https://class.coursera.org/learning-002/quiz/start?quiz_id=61
+SUMMARY:Quiz: Week 2 (Due Date)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973097|quiz|63|hard
+DTSTART:20141028T035900Z
+DTEND:20141028T045900Z
+DTSTAMP:20141028T035900Z
+CREATED:20141025T170446Z
+DESCRIPTION:If you submit any time after the hard deadline\, you will not receive credit. Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141028T035900Z
+LOCATION:https://class.coursera.org/learning-002/quiz/start?quiz_id=63
+SUMMARY:Quiz: Week 3 (Hard Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973097|quiz|63|soft
+DTSTART:20141028T025900Z
+DTEND:20141028T035900Z
+DTSTAMP:20141028T025900Z
+CREATED:20141025T170446Z
+DESCRIPTION:If you submit after the due date (but before the hard deadline)\, your submission score will be penalized 20%. Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141028T025900Z
+LOCATION:https://class.coursera.org/learning-002/quiz/start?quiz_id=63
+SUMMARY:Quiz: Week 3 (Due Date)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973097|quiz|153|hard
+DTSTART:20141104T035900Z
+DTEND:20141104T045900Z
+DTSTAMP:20141104T035900Z
+CREATED:20141025T170446Z
+DESCRIPTION:If you submit any time after the hard deadline\, you will not receive credit. Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141104T035900Z
+LOCATION:https://class.coursera.org/learning-002/quiz/start?quiz_id=153
+SUMMARY:Introductory quiz (Hard Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973097|assessment|2|submission
+DTSTART:20141016T025900Z
+DTEND:20141016T035900Z
+DTSTAMP:20141016T025900Z
+CREATED:20141025T170446Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141016T025900Z
+LOCATION:https://class.coursera.org/learning-002/human_grading/view?assessment_id=2
+SUMMARY:Peer grading assignment #1 (Submission Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973097|assessment|2|evaluation
+DTSTART:20141023T025900Z
+DTEND:20141023T035900Z
+DTSTAMP:20141023T025900Z
+CREATED:20141025T170446Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141023T025900Z
+LOCATION:https://class.coursera.org/learning-002/human_grading/view?assessment_id=2
+SUMMARY:Peer grading assignment #1 (Evaluation Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973097|assessment|3|submission
+DTSTART:20141030T025900Z
+DTEND:20141030T035900Z
+DTSTAMP:20141030T025900Z
+CREATED:20141025T170446Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141030T025900Z
+LOCATION:https://class.coursera.org/learning-002/human_grading/view?assessment_id=3
+SUMMARY:Peer grading assignment #2 (Submission Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973097|assessment|3|evaluation
+DTSTART:20141104T035900Z
+DTEND:20141104T045900Z
+DTSTAMP:20141104T035900Z
+CREATED:20141025T170446Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141104T035900Z
+LOCATION:https://class.coursera.org/learning-002/human_grading/view?assessment_id=3
+SUMMARY:Peer grading assignment #2 (Evaluation Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
