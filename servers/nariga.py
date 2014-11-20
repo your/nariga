@@ -25,7 +25,7 @@ def login(form):
 
 	user_record = users.validate_login(nuser, npass)
 
-	session_id = -1
+	session_id = "-1"
 
 	if user_record:
 		session_id = sessions.start_session(user_record['_id'])
