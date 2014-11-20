@@ -1,10 +1,9 @@
-name: nariga
+name: narigaboot
 description: A sample web application
 dependencies:
-  angular: any
   avl_tree: any
+  bootjack: any
   browser: any
   crypto: any
-  ng_infinite_scroll: any
-transformers:
-- angular
+  dquery: any
+  web_components: any
