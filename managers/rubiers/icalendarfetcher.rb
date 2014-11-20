@@ -67,7 +67,6 @@ cal_file = File.open(calendar, 'r') do |f|
 		# puts "salvo linea: #{line}"
 		calarray << line
 		if (line.index('X-WR-CALNAME') != nil)
-			puts "!!!!! trovato bug: #{line}"
 			bugline = i
 			foundcomma = line.index(',')
 			escapedyet = line.index('\,')
@@ -78,6 +77,8 @@ end
 
 ## FIX LATER TO FIX MORE THAN ONE UNESCAPED COMMA!! ##
 if fixme
+
+	puts "!!!!! trovato bug"
 
 	calname = calarray[bugline].split(',')
 	newname = calname[0] + '\,' + calname [1] # adding escape \
