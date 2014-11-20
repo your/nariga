@@ -1,0 +1,202 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Coursera Calendars//NONSGML//EN
+X-WR-CALNAME:Design: Creation of Artifacts in Society
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:973320|assessment|40|submission
+DTSTART:20141027T025900Z
+DTEND:20141027T035900Z
+DTSTAMP:20141027T025900Z
+CREATED:20141111T061818Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141027T025900Z
+LOCATION:https://class.coursera.org/design-005/human_grading/view?assessment_id=40
+SUMMARY:Homework #1 (Submission Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973320|assessment|40|evaluation
+DTSTART:20141103T035900Z
+DTEND:20141103T045900Z
+DTSTAMP:20141103T035900Z
+CREATED:20141111T061818Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141103T035900Z
+LOCATION:https://class.coursera.org/design-005/human_grading/view?assessment_id=40
+SUMMARY:Homework #1 (Evaluation Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973320|assessment|41|submission
+DTSTART:20141103T035900Z
+DTEND:20141103T045900Z
+DTSTAMP:20141103T035900Z
+CREATED:20141111T061818Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141103T035900Z
+LOCATION:https://class.coursera.org/design-005/human_grading/view?assessment_id=41
+SUMMARY:Homework #2 (Submission Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973320|assessment|41|evaluation
+DTSTART:20141110T035900Z
+DTEND:20141110T045900Z
+DTSTAMP:20141110T035900Z
+CREATED:20141111T061818Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141110T035900Z
+LOCATION:https://class.coursera.org/design-005/human_grading/view?assessment_id=41
+SUMMARY:Homework #2 (Evaluation Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973320|assessment|42|submission
+DTSTART:20141110T035900Z
+DTEND:20141110T045900Z
+DTSTAMP:20141110T035900Z
+CREATED:20141111T061818Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141110T035900Z
+LOCATION:https://class.coursera.org/design-005/human_grading/view?assessment_id=42
+SUMMARY:Homework #3 (Submission Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973320|assessment|42|evaluation
+DTSTART:20141117T035900Z
+DTEND:20141117T045900Z
+DTSTAMP:20141117T035900Z
+CREATED:20141111T061818Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141117T035900Z
+LOCATION:https://class.coursera.org/design-005/human_grading/view?assessment_id=42
+SUMMARY:Homework #3 (Evaluation Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973320|assessment|43|submission
+DTSTART:20141117T035900Z
+DTEND:20141117T045900Z
+DTSTAMP:20141117T035900Z
+CREATED:20141111T061818Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141117T035900Z
+LOCATION:https://class.coursera.org/design-005/human_grading/view?assessment_id=43
+SUMMARY:Homework #4 (Submission Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973320|assessment|43|evaluation
+DTSTART:20141124T035900Z
+DTEND:20141124T045900Z
+DTSTAMP:20141124T035900Z
+CREATED:20141111T061818Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141124T035900Z
+LOCATION:https://class.coursera.org/design-005/human_grading/view?assessment_id=43
+SUMMARY:Homework #4 (Evaluation Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973320|assessment|44|submission
+DTSTART:20141124T035900Z
+DTEND:20141124T045900Z
+DTSTAMP:20141124T035900Z
+CREATED:20141111T061818Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141124T035900Z
+LOCATION:https://class.coursera.org/design-005/human_grading/view?assessment_id=44
+SUMMARY:Homework #5 (Submission Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973320|assessment|44|evaluation
+DTSTART:20141201T035900Z
+DTEND:20141201T045900Z
+DTSTAMP:20141201T035900Z
+CREATED:20141111T061818Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141201T035900Z
+LOCATION:https://class.coursera.org/design-005/human_grading/view?assessment_id=44
+SUMMARY:Homework #5 (Evaluation Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973320|assessment|45|submission
+DTSTART:20141201T035900Z
+DTEND:20141201T045900Z
+DTSTAMP:20141201T035900Z
+CREATED:20141111T061818Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141201T035900Z
+LOCATION:https://class.coursera.org/design-005/human_grading/view?assessment_id=45
+SUMMARY:Homework #6 (Submission Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973320|assessment|45|evaluation
+DTSTART:20141208T035900Z
+DTEND:20141208T045900Z
+DTSTAMP:20141208T035900Z
+CREATED:20141111T061818Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141208T035900Z
+LOCATION:https://class.coursera.org/design-005/human_grading/view?assessment_id=45
+SUMMARY:Homework #6 (Evaluation Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973320|assessment|46|submission
+DTSTART:20141208T035900Z
+DTEND:20141208T045900Z
+DTSTAMP:20141208T035900Z
+CREATED:20141111T061818Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141208T035900Z
+LOCATION:https://class.coursera.org/design-005/human_grading/view?assessment_id=46
+SUMMARY:Homework #7 (Submission Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973320|assessment|46|evaluation
+DTSTART:20141215T035900Z
+DTEND:20141215T045900Z
+DTSTAMP:20141215T035900Z
+CREATED:20141111T061818Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141215T035900Z
+LOCATION:https://class.coursera.org/design-005/human_grading/view?assessment_id=46
+SUMMARY:Homework #7 (Evaluation Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

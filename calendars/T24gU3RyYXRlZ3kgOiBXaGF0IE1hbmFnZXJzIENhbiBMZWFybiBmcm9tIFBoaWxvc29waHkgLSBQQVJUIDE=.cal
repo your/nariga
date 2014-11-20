@@ -1,0 +1,62 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Coursera Calendars//NONSGML//EN
+X-WR-CALNAME:On Strategy : What Managers Can Learn from Philosophy - PART 1
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:973201|assessment|15|submission
+DTSTART:20141118T215900Z
+DTEND:20141118T225900Z
+DTSTAMP:20141118T215900Z
+CREATED:20141111T061824Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141118T215900Z
+LOCATION:https://class.coursera.org/businessandphilo-002/human_grading/view?assessment_id=15
+SUMMARY:Assignment 1 (Submission Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973201|assessment|15|evaluation
+DTSTART:20141123T215900Z
+DTEND:20141123T225900Z
+DTSTAMP:20141123T215900Z
+CREATED:20141111T061824Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141123T215900Z
+LOCATION:https://class.coursera.org/businessandphilo-002/human_grading/view?assessment_id=15
+SUMMARY:Assignment 1 (Evaluation Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973201|assessment|16|submission
+DTSTART:20141125T215900Z
+DTEND:20141125T225900Z
+DTSTAMP:20141125T215900Z
+CREATED:20141111T061824Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141125T215900Z
+LOCATION:https://class.coursera.org/businessandphilo-002/human_grading/view?assessment_id=16
+SUMMARY:Assignment 2 (Submission Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:973201|assessment|16|evaluation
+DTSTART:20141130T215900Z
+DTEND:20141130T225900Z
+DTSTAMP:20141130T215900Z
+CREATED:20141111T061824Z
+DESCRIPTION: Note that deadlines are sometimes extended\, so check the website for the latest information.
+LAST-MODIFIED:20141130T215900Z
+LOCATION:https://class.coursera.org/businessandphilo-002/human_grading/view?assessment_id=16
+SUMMARY:Assignment 2 (Evaluation Deadline)
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
