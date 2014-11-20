@@ -1,0 +1,41 @@
+
+/* Attribuisco la classe relative al form in modo da poter 
+posizionare il menu autocomplete in relazione ad esso
+----------------------------------*/
+
+form#search-form{
+  position: relative;
+}
+  
+/* Imposto gli stili del menu dell'autocomplete in modo da 
+permettere a jQuery UI di spostalo a piacimento in base alla 
+posizione del campo di testo
+----------------------------------*/
+
+form#search-form ul{
+	  position: absolute;
+	  top: 0;
+	  left: 0; 
+	  width: 100%;
+	  max-height: 200px;
+	  overflow: auto;	  
+	  z-index: 1;	  
+	  border:1px solid #DDDDDD;
+	  border-radius: 6px;	  
+  }
+
+/* Siccome gli stili del jQuery UI non sono stati aggiunti,
+nacondo la classe dell'helper
+----------------------------------*/
+span.ui-helper-hidden-accessible{
+  display: none !important;
+}
+    
+/* Siccome non posso sovrascrivere lo stato del focus della
+selezione degli elementi nella lista, uso la classe del jQuery UI
+per modificarne gli stili
+----------------------------------*/
+.ui-state-focus {
+	 color: #ffffff;
+	 background-color: #428bca;
+}
