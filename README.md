@@ -1,3 +1,7 @@
+
+OBSOLETE! - alpha of http://github.com/your/moocboom
+---
+
 # Coursera's Deadlines Visualizer (codename: Nariga) #
 
 A *"at one glance"* solution for those who follow and are determined to succed in more than one course.
